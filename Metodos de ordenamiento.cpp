@@ -4,7 +4,7 @@
 
 /* -------------------------------------------------- Estructuras --------------------------------------------------*/
 
-// Definición de la estructura Persona
+// DefiniciÃ³n de la estructura Persona
 struct Persona {
     char nombre[50];
     char apellidoPaterno[50];
@@ -13,7 +13,7 @@ struct Persona {
     char correo[50];
 };
 
-// Nodo para listas y árboles
+// Nodo para listas y Ã¡rboles
 struct Nodo {
     struct Persona datos;
     struct Nodo* siguiente;
@@ -24,14 +24,14 @@ struct Pila {
     struct Nodo* tope;
 };
 
-// Estructura para el árbol binario de búsqueda
+// Estructura para el Ã¡rbol binario de bÃºsqueda
 struct NodoArbol {
     struct Persona datos;
     struct NodoArbol* izquierda;
     struct NodoArbol* derecha;
 };
 
-// Estructura para el árbol
+// Estructura para el Ã¡rbol
 struct Arbol {
     struct NodoArbol* raiz;
 };
@@ -63,7 +63,7 @@ void pop(struct Pila* pila);
 void mostrarPila(struct Pila pila);
 void modificarPila(struct Pila* pila);
 
-// Funciones auxiliares para el árbol
+// Funciones auxiliares para el Ã¡rbol
 struct NodoArbol* crearNodoArbol(struct Persona datos);
 void insertarEnArbol(struct Arbol* arbol, struct Persona datos);
 void mostrarArbolInOrden(struct NodoArbol* nodo);
@@ -80,7 +80,7 @@ void insertarAlInicio(struct Lista* lista, struct Persona datos);
 void mostrarLista(struct Lista lista);
 void eliminarLista(struct Lista* lista);
 
-// Funciones auxiliares para el ordenamiento por inserción
+// Funciones auxiliares para el ordenamiento por inserciÃ³n
 void ordenamientoInsercion(struct Persona arreglo[], int n);
 void mostrarArreglo(struct Persona arreglo[], int n);
 
@@ -91,14 +91,14 @@ int main() {
     int opcion;
 
     do {
-        printf("\nMenú Principal:\n");
+        printf("\nMenÃº Principal:\n");
         printf("1. Pilas\n");
         printf("2. Colas\n");
         printf("3. Listas\n");
-        printf("4. Árboles\n");
-        printf("5. Método de Ordenamiento por Inserción\n");
+        printf("4. Ãrboles\n");
+        printf("5. MÃ©todo de Ordenamiento por InserciÃ³n\n");
         printf("0. Salir\n");
-        printf("\n\nIngrese su opción: ");
+        printf("\n\nIngrese su opciÃ³n: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
@@ -118,10 +118,10 @@ int main() {
                 menuOrdenamientoInsercion();
                 break;
             case 0:
-                printf("\n\nSaliendo del programa. ¡Hasta luego!\n");
+                printf("\n\nSaliendo del programa. Â¡Hasta luego!\n");
                 break;
             default:
-                printf("\nOpción no válida. Por favor, ingrese una opción válida.\n");
+                printf("\nOpciÃ³n no vÃ¡lida. Por favor, ingrese una opciÃ³n vÃ¡lida.\n");
         }
     } while (opcion != 0);
 
@@ -139,13 +139,13 @@ void menuPilas() {
     int opcion;
 
     do {
-        printf("\nMenú de Pilas:\n");
+        printf("\nMenÃº de Pilas:\n");
         printf("1. Agregar persona\n");
         printf("2. Modificar persona\n");
         printf("3. Eliminar persona\n");
         printf("4. Mostrar pilas\n");
-        printf("0. Volver al menú principal\n");
-        printf("Ingrese su opción: ");
+        printf("0. Volver al menÃº principal\n");
+        printf("Ingrese su opciÃ³n: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
@@ -157,7 +157,7 @@ void menuPilas() {
 				scanf("%s %s", nuevaPersona.apellidoPaterno, nuevaPersona.apellidoMaterno);
                 printf("Ingrese la edad: ");
                 scanf("%d", &nuevaPersona.edad);
-                printf("Ingrese el correo electrónico: ");
+                printf("Ingrese el correo electrÃ³nico: ");
                 scanf("%s", nuevaPersona.correo);
 
                 push(&pila, nuevaPersona);
@@ -174,10 +174,10 @@ void menuPilas() {
                 mostrarPila(pila);
                 break;
             case 0:
-                printf("\n\nVolviendo al menú principal.\n");
+                printf("\n\nVolviendo al menÃº principal.\n");
                 break;
             default:
-                printf("\nOpción no válida. Por favor, ingrese una opción válida.\n");
+                printf("\nOpciÃ³n no vÃ¡lida. Por favor, ingrese una opciÃ³n vÃ¡lida.\n");
         }
     } while (opcion != 0);
 }
@@ -200,7 +200,7 @@ void push(struct Pila* pila, struct Persona datos) {
 
 void pop(struct Pila* pila) {
     if (pila->tope == NULL) {
-        printf("La pila está vacía. No se puede eliminar.\n");
+        printf("La pila estÃ¡ vacÃ­a. No se puede eliminar.\n");
         return;
     }
 
@@ -211,7 +211,7 @@ void pop(struct Pila* pila) {
 
 void mostrarPila(struct Pila pila) {
     if (pila.tope == NULL) {
-        printf("La pila está vacía.\n");
+        printf("La pila estÃ¡ vacÃ­a.\n");
         return;
     }
 
@@ -239,7 +239,7 @@ void modificarPila(struct Pila* pila) {
     while (actual != NULL) {
         if (strcmp(actual->datos.nombre, nombreBuscar) == 0) {
             // Persona encontrada, permite modificar los datos
-            printf("Nueva información para %s:\n", nombreBuscar);
+            printf("Nueva informaciÃ³n para %s:\n", nombreBuscar);
     
             printf("Ingrese el nuevo nombre: ");
             scanf("%s", actual->datos.nombre);
@@ -253,17 +253,17 @@ void modificarPila(struct Pila* pila) {
             printf("Ingrese la nueva edad: ");
             scanf("%d", &actual->datos.edad);
     
-            printf("Ingrese el nuevo correo electrónico: ");
+            printf("Ingrese el nuevo correo electrÃ³nico: ");
             scanf("%s", actual->datos.correo);
 
-            printf("\nInformación modificada con éxito.\n");
+            printf("\nInformaciÃ³n modificada con Ã©xito.\n");
             return;
         }
         actual = actual->siguiente;
     }
 
-    // Si llega aquí, no se encontró la persona
-    printf("\nNo se encontró la persona con nombre %s en la pila.\n", nombreBuscar);
+    // Si llega aquÃ­, no se encontrÃ³ la persona
+    printf("\nNo se encontrÃ³ la persona con nombre %s en la pila.\n", nombreBuscar);
 }
 
 
@@ -275,12 +275,12 @@ void menuColas() {
     int opcion;
 
     do {
-        printf("\nMenú de Colas:\n");
+        printf("\nMenÃº de Colas:\n");
         printf("1. Agregar persona a la cola\n");
         printf("2. Eliminar persona de la cola\n");
         printf("3. Mostrar cola\n");
-        printf("0. Volver al menú principal\n");
-        printf("\n\nIngrese su opción: ");
+        printf("0. Volver al menÃº principal\n");
+        printf("\n\nIngrese su opciÃ³n: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
@@ -292,7 +292,7 @@ void menuColas() {
 				scanf("%s %s", nuevaPersona.apellidoPaterno, nuevaPersona.apellidoMaterno);
                 printf("Ingrese la edad: ");
                 scanf("%d", &nuevaPersona.edad);
-                printf("Ingrese el correo electrónico: ");
+                printf("Ingrese el correo electrÃ³nico: ");
                 scanf("%s", nuevaPersona.correo);
 
                 encolar(&cola, nuevaPersona);
@@ -306,10 +306,10 @@ void menuColas() {
                 mostrarCola(cola);
                 break;
             case 0:
-                printf("\n\nVolviendo al menú principal.\n");
+                printf("\n\nVolviendo al menÃº principal.\n");
                 break;
             default:
-                printf("\nOpción no válida. Por favor, ingrese una opción válida.\n");
+                printf("\nOpciÃ³n no vÃ¡lida. Por favor, ingrese una opciÃ³n vÃ¡lida.\n");
         }
     } while (opcion != 0);
 }
@@ -340,7 +340,7 @@ void encolar(struct Cola* cola, struct Persona datos) {
 
 void desencolar(struct Cola* cola) {
     if (cola->frente == NULL) {
-        printf("\nLa cola está vacía. No se puede desencolar.\n");
+        printf("\nLa cola estÃ¡ vacÃ­a. No se puede desencolar.\n");
         return;
     }
 
@@ -348,7 +348,7 @@ void desencolar(struct Cola* cola) {
     cola->frente = temp->siguiente;
 
     if (cola->frente == NULL) {
-        // Si la cola está vacía, también actualiza el puntero al final
+        // Si la cola estÃ¡ vacÃ­a, tambiÃ©n actualiza el puntero al final
         cola->final = NULL;
     }
 
@@ -357,7 +357,7 @@ void desencolar(struct Cola* cola) {
 
 void mostrarCola(struct Cola cola) {
     if (cola.frente == NULL) {
-        printf("\nLa cola está vacía.\n");
+        printf("\nLa cola estÃ¡ vacÃ­a.\n");
         return;
     }
 
@@ -384,12 +384,12 @@ void menuListas() {
     int opcion;
 
     do {
-        printf("\nMenú de Listas:\n");
+        printf("\nMenÃº de Listas:\n");
         printf("1. Agregar persona al inicio de la lista\n");
         printf("2. Mostrar lista\n");
         printf("3. Eliminar lista\n");
-        printf("0. Volver al menú principal\n");
-        printf("\n\nIngrese su opción: ");
+        printf("0. Volver al menÃº principal\n");
+        printf("\n\nIngrese su opciÃ³n: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
@@ -401,7 +401,7 @@ void menuListas() {
 				scanf("%s %s", nuevaPersona.apellidoPaterno, nuevaPersona.apellidoMaterno);
                 printf("Ingrese la edad: ");
                 scanf("%d", &nuevaPersona.edad);
-                printf("Ingrese el correo electrónico: ");
+                printf("Ingrese el correo electrÃ³nico: ");
                 scanf("%s", nuevaPersona.correo);
 
                 insertarAlInicio(&lista, nuevaPersona);
@@ -416,10 +416,10 @@ void menuListas() {
                 printf("\nLista eliminada.\n");
                 break;
             case 0:
-                printf("\n\nVolviendo al menú principal.\n");
+                printf("\n\nVolviendo al menÃº principal.\n");
                 break;
             default:
-                printf("\nOpción no válida. Por favor, ingrese una opción válida.\n");
+                printf("\nOpciÃ³n no vÃ¡lida. Por favor, ingrese una opciÃ³n vÃ¡lida.\n");
         }
     } while (opcion != 0);
 }
@@ -443,7 +443,7 @@ void insertarAlInicio(struct Lista* lista, struct Persona datos) {
 void mostrarLista(struct Lista lista) {
     if (lista.inicio == NULL) {
     	printf("+-------------------------------+\n");
-        printf("La lista está vacía.\n");
+        printf("La lista estÃ¡ vacÃ­a.\n");
         printf("+-------------------------------+");
         return;
     }
@@ -479,11 +479,11 @@ void menuArboles() {
     int opcion;
 
     do {
-        printf("\nMenú de Árboles:\n");
+        printf("\nMenÃº de Ãrboles:\n");
         printf("1. Agregar persona\n");
         printf("2. Mostrar personas en orden\n");
-        printf("0. Volver al menú principal\n");
-        printf("\nIngrese su opción: ");
+        printf("0. Volver al menÃº principal\n");
+        printf("\nIngrese su opciÃ³n: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
@@ -495,22 +495,24 @@ void menuArboles() {
 				scanf("%s %s", nuevaPersona.apellidoPaterno, nuevaPersona.apellidoMaterno);
                 printf("Ingrese la edad: ");
                 scanf("%d", &nuevaPersona.edad);
-                printf("Ingrese el correo electrónico: ");
+                printf("Ingrese el correo electrÃ³nico: ");
                 scanf("%s", nuevaPersona.correo);
 
                 insertarEnArbol(&arbol, nuevaPersona);
-                printf("\nPersona agregada al árbol.\n");
+                printf("\nPersona agregada al Ã¡rbol.\n");
                 break;
             }
             case 2:
+            	printf("+-------------------------------+");
                 printf("\nPersonas en orden:\n");
                 mostrarArbolInOrden(arbol.raiz);
+                printf("+-------------------------------+");
                 break;
             case 0:
-                printf("\n\nVolviendo al menú principal.\n");
+                printf("\n\nVolviendo al menÃº principal.\n");
                 break;
             default:
-                printf("\nOpción no válida. Por favor, ingrese una opción válida.\n");
+                printf("\nOpciÃ³n no vÃ¡lida. Por favor, ingrese una opciÃ³n vÃ¡lida.\n");
         }
     } while (opcion != 0);
 }
@@ -518,7 +520,7 @@ void menuArboles() {
 struct NodoArbol* crearNodoArbol(struct Persona datos) {
     struct NodoArbol* nuevoNodo = (struct NodoArbol*)malloc(sizeof(struct NodoArbol));
     if (nuevoNodo == NULL) {
-        printf("\nError: No se pudo asignar memoria para el nuevo nodo del árbol.\n");
+        printf("\nError: No se pudo asignar memoria para el nuevo nodo del Ã¡rbol.\n");
         exit(EXIT_FAILURE);
     }
 
@@ -549,8 +551,8 @@ void insertarEnArbol(struct Arbol* arbol, struct Persona datos) {
                     actual = actual->derecha;
                 }
             } else {
-                // Ignora duplicados (puedes decidir qué hacer en este caso)
-                printf("\nLa persona con nombre %s ya existe en el árbol. Ignorando duplicado.\n", datos.nombre);
+                // Ignora duplicados (puedes decidir quÃ© hacer en este caso)
+                printf("\nLa persona con nombre %s ya existe en el Ã¡rbol. Ignorando duplicado.\n", datos.nombre);
                 break;
             }
         }
@@ -577,14 +579,14 @@ void menuOrdenamientoInsercion() {
     struct Persona personas[n];
 
     for (int i = 0; i < n; ++i) {
-        struct Persona nuevaPersona;  // Declarar nuevaPersona aquí
+        struct Persona nuevaPersona;  // Declarar nuevaPersona aquÃ­
         printf("\nIngrese el nombre: ");
         scanf("%s", nuevaPersona.nombre);
         printf("Ingrese los apellidos (paterno materno): ");
         scanf("%s %s", nuevaPersona.apellidoPaterno, nuevaPersona.apellidoMaterno);
         printf("Ingrese la edad: ");
         scanf("%d", &nuevaPersona.edad);
-        printf("Ingrese el correo electrónico: ");
+        printf("Ingrese el correo electrÃ³nico: ");
         scanf("%s", nuevaPersona.correo);
 
         personas[i] = nuevaPersona;  // Asignar nuevaPersona al arreglo
@@ -595,7 +597,7 @@ void menuOrdenamientoInsercion() {
 
     ordenamientoInsercion(personas, n);
 
-    printf("\n\nPersonas después del ordenamiento por inserción:\n");
+    printf("\n\nPersonas despuÃ©s del ordenamiento por inserciÃ³n:\n");
     mostrarArreglo(personas, n);
 }
 
@@ -629,4 +631,3 @@ void mostrarArreglo(struct Persona arreglo[], int n) {
         printf("+-------------------------------+\n");
     }
 }
-
