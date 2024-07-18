@@ -1,6 +1,6 @@
 # Sistema de Gestión de Estructuras de Datos
 
-¡Bienvenido al proyecto de estructuras de datos en C! 🚀 Aquí encontrarás un programa que permite gestionar **Pilas**, **Colas**, **Listas**, **Árboles** y realizar **Ordenamiento por Inserción**. A continuación, te explicamos brevemente cada una de estas estructuras y sus funciones.
+¡Bienvenido al proyecto de estructuras de datos en C! 🚀 Aquí encontrarás un programa que permite gestionar **Pilas**, **Colas**, **Listas**, **Árboles** y realizar **Ordenamiento por Inserción**. A continuación, te explico brevemente cada una de estas estructuras y sus funciones.
 
 ## 📚 Pilas
 
